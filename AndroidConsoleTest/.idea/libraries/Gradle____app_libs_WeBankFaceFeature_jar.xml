@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: ./app/libs/WeBankFaceFeature.jar">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/libs/WeBankFaceFeature.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
