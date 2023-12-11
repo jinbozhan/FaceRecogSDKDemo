@@ -1,0 +1,673 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<style>.hljs{display:block;overflow-x:auto;padding:0.5em;background:#F0F0F0}.hljs,.hljs-subst{color:#444}.hljs-comment{color:#888888}.hljs-keyword,.hljs-attribute,.hljs-selector-tag,.hljs-meta-keyword,.hljs-doctag,.hljs-name{font-weight:bold}.hljs-type,.hljs-string,.hljs-number,.hljs-selector-id,.hljs-selector-class,.hljs-quote,.hljs-template-tag,.hljs-versiondeletion{color:#880000}.hljs-title,.hljs-section{color:#880000;font-weight:bold}.hljs-regexp,.hljs-symbol,.hljs-variable,.hljs-template-variable,.hljs-link,.hljs-selector-attr,.hljs-selector-pseudo{color:#BC6060}.hljs-literal{color:#78A960}.hljs-built_in,.hljs-bullet,.hljs-code,.hljs-addition{color:#397300}.hljs-meta{color:#1f7199}.hljs-meta-string{color:#4d99bf}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}</style><style>
+.hljs{display:block;overflow-x:auto;padding:0.5em;background:#F0F0F0}.hljs,.hljs-subst{color:#444}.hljs-comment{color:#888888}.hljs-keyword,.hljs-attribute,.hljs-selector-tag,.hljs-meta-keyword,.hljs-doctag,.hljs-name{font-weight:bold}.hljs-type,.hljs-string,.hljs-number,.hljs-selector-id,.hljs-selector-class,.hljs-quote,.hljs-template-tag,.hljs-versiondeletion{color:#880000}.hljs-title,.hljs-section{color:#880000;font-weight:bold}.hljs-regexp,.hljs-symbol,.hljs-variable,.hljs-template-variable,.hljs-link,.hljs-selector-attr,.hljs-selector-pseudo{color:#BC6060}.hljs-literal{color:#78A960}.hljs-built_in,.hljs-bullet,.hljs-code,.hljs-addition{color:#397300}.hljs-meta{color:#1f7199}.hljs-meta-string{color:#4d99bf}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}
+ /*!
+ * Primer-product
+ * http://primer.github.io
+ *
+ * Released under MIT license. Copyright (c) 2018 GitHub Inc.
+ */
+ a{text-decoration: none;} 
+.multimarkdown-preview {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol !important;
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    width: 1000px;
+    margin: auto;
+}
+
+.multimarkdown-preview:after,.multimarkdown-preview:before {
+    content: "";
+    display: table
+}
+
+.multimarkdown-preview:after {
+    clear: both
+}
+
+.multimarkdown-preview>:first-child {
+    margin-top: 0!important
+}
+
+.multimarkdown-preview>:last-child {
+    margin-bottom: 0!important
+}
+
+.multimarkdown-preview a:not([href]) {
+    color: inherit;
+    text-decoration: none
+}
+
+.multimarkdown-preview .absent {
+    color: #cb2431
+}
+
+.multimarkdown-preview .anchor {
+    float: left;
+    line-height: 1;
+    margin-left: -20px;
+    padding-right: 4px
+}
+
+.multimarkdown-preview .anchor:focus {
+    outline: none
+}
+
+.multimarkdown-preview blockquote,.multimarkdown-preview dl,.multimarkdown-preview ol,.multimarkdown-preview p,.multimarkdown-preview pre,.multimarkdown-preview table,.multimarkdown-preview ul {
+    margin-bottom: 16px;
+    margin-top: 0
+}
+
+.multimarkdown-preview hr {
+    background-color: #e1e4e8;
+    border: 0;
+    height: .25em;
+    margin: 24px 0;
+    padding: 0
+}
+
+.multimarkdown-preview blockquote {
+    border-left: .25em solid #dfe2e5;
+    color: #6a737d;
+    padding: 0 1em
+}
+
+.multimarkdown-preview blockquote>:first-child {
+    margin-top: 0
+}
+
+.multimarkdown-preview blockquote>:last-child {
+    margin-bottom: 0
+}
+
+.multimarkdown-preview kbd {
+    background-color: #fafbfc;
+    border: 1px solid #c6cbd1;
+    border-bottom-color: #959da5;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #959da5;
+    color: #444d56;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 10px;
+    padding: 3px 5px;
+    vertical-align: middle
+}
+
+.multimarkdown-preview h1,.multimarkdown-preview h2,.multimarkdown-preview h3,.multimarkdown-preview h4,.multimarkdown-preview h5,.multimarkdown-preview h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    margin-top: 24px
+}
+
+.multimarkdown-preview h1 .octicon-link,.multimarkdown-preview h2 .octicon-link,.multimarkdown-preview h3 .octicon-link,.multimarkdown-preview h4 .octicon-link,.multimarkdown-preview h5 .octicon-link,.multimarkdown-preview h6 .octicon-link {
+    color: #1b1f23;
+    vertical-align: middle;
+    visibility: hidden
+}
+
+.multimarkdown-preview h1:hover .anchor,.multimarkdown-preview h2:hover .anchor,.multimarkdown-preview h3:hover .anchor,.multimarkdown-preview h4:hover .anchor,.multimarkdown-preview h5:hover .anchor,.multimarkdown-preview h6:hover .anchor {
+    text-decoration: none
+}
+
+.multimarkdown-preview h1:hover .anchor .octicon-link,.multimarkdown-preview h2:hover .anchor .octicon-link,.multimarkdown-preview h3:hover .anchor .octicon-link,.multimarkdown-preview h4:hover .anchor .octicon-link,.multimarkdown-preview h5:hover .anchor .octicon-link,.multimarkdown-preview h6:hover .anchor .octicon-link {
+    visibility: visible
+}
+
+.multimarkdown-preview h1 code,.multimarkdown-preview h1 tt,.multimarkdown-preview h2 code,.multimarkdown-preview h2 tt,.multimarkdown-preview h3 code,.multimarkdown-preview h3 tt,.multimarkdown-preview h4 code,.multimarkdown-preview h4 tt,.multimarkdown-preview h5 code,.multimarkdown-preview h5 tt,.multimarkdown-preview h6 code,.multimarkdown-preview h6 tt {
+    font-size: inherit
+}
+
+.multimarkdown-preview h1 {
+    font-size: 2em
+}
+
+.multimarkdown-preview h1,.multimarkdown-preview h2 {
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: .3em
+}
+
+.multimarkdown-preview h2 {
+    font-size: 1.5em
+}
+
+.multimarkdown-preview h3 {
+    font-size: 1.25em
+}
+
+.multimarkdown-preview h4 {
+    font-size: 1em
+}
+
+.multimarkdown-preview h5 {
+    font-size: .875em
+}
+
+.multimarkdown-preview h6 {
+    color: #6a737d;
+    font-size: .85em
+}
+
+.multimarkdown-preview ol,.multimarkdown-preview ul {
+    padding-left: 2em
+}
+
+.multimarkdown-preview ol.no-list,.multimarkdown-preview ul.no-list {
+    list-style-type: none;
+    padding: 0
+}
+
+.multimarkdown-preview ol ol,.multimarkdown-preview ol ul,.multimarkdown-preview ul ol,.multimarkdown-preview ul ul {
+    margin-bottom: 0;
+    margin-top: 0
+}
+
+.multimarkdown-preview li {
+    word-wrap: break-all
+}
+
+.multimarkdown-preview li>p {
+    margin-top: 16px
+}
+
+.multimarkdown-preview li+li {
+    margin-top: .25em
+}
+
+.multimarkdown-preview dl {
+    padding: 0
+}
+
+.multimarkdown-preview dl dt {
+    font-size: 1em;
+    font-style: italic;
+    font-weight: 600;
+    margin-top: 16px;
+    padding: 0
+}
+
+.multimarkdown-preview dl dd {
+    margin-bottom: 16px;
+    padding: 0 16px
+}
+
+.multimarkdown-preview table {
+    display: block;
+    overflow: auto;
+    width: 100%
+}
+
+.multimarkdown-preview table th {
+    font-weight: 600
+}
+
+.multimarkdown-preview table td,.multimarkdown-preview table th {
+    border: 1px solid #dfe2e5;
+    padding: 6px 13px
+}
+
+.multimarkdown-preview table tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1
+}
+
+.multimarkdown-preview table tr:nth-child(2n) {
+    background-color: #f6f8fa
+}
+
+.multimarkdown-preview table img {
+    background-color: initial
+}
+
+.multimarkdown-preview img {
+    background-color: #fff;
+    box-sizing: initial;
+    max-width: 100%
+}
+
+.multimarkdown-preview img[align=right] {
+    padding-left: 20px
+}
+
+.multimarkdown-preview img[align=left] {
+    padding-right: 20px
+}
+
+.multimarkdown-preview .emoji {
+    background-color: initial;
+    max-width: none;
+    vertical-align: text-top
+}
+
+.multimarkdown-preview span.frame {
+    display: block;
+    overflow: hidden
+}
+
+.multimarkdown-preview span.frame>span {
+    border: 1px solid #dfe2e5;
+    display: block;
+    float: left;
+    margin: 13px 0 0;
+    overflow: hidden;
+    padding: 7px;
+    width: auto
+}
+
+.multimarkdown-preview span.frame span img {
+    display: block;
+    float: left
+}
+
+.multimarkdown-preview span.frame span span {
+    clear: both;
+    color: #24292e;
+    display: block;
+    padding: 5px 0 0
+}
+
+.multimarkdown-preview span.align-center {
+    clear: both;
+    display: block;
+    overflow: hidden
+}
+
+.multimarkdown-preview span.align-center>span {
+    display: block;
+    margin: 13px auto 0;
+    overflow: hidden;
+    text-align: center
+}
+
+.multimarkdown-preview span.align-center span img {
+    margin: 0 auto;
+    text-align: center
+}
+
+.multimarkdown-preview span.align-right {
+    clear: both;
+    display: block;
+    overflow: hidden
+}
+
+.multimarkdown-preview span.align-right>span {
+    display: block;
+    margin: 13px 0 0;
+    overflow: hidden;
+    text-align: right
+}
+
+.multimarkdown-preview span.align-right span img {
+    margin: 0;
+    text-align: right
+}
+
+.multimarkdown-preview span.float-left {
+    display: block;
+    float: left;
+    margin-right: 13px;
+    overflow: hidden
+}
+
+.multimarkdown-preview span.float-left span {
+    margin: 13px 0 0
+}
+
+.multimarkdown-preview span.float-right {
+    display: block;
+    float: right;
+    margin-left: 13px;
+    overflow: hidden
+}
+
+.multimarkdown-preview span.float-right>span {
+    display: block;
+    margin: 13px auto 0;
+    overflow: hidden;
+    text-align: right
+}
+
+.multimarkdown-preview code,.multimarkdown-preview tt {
+    font-family: consolas;
+    background-color: rgba(27,31,35,.05);
+    border-radius: 3px;
+    font-size: 85%;
+    margin: 0;
+    padding: .2em .4em
+}
+
+.multimarkdown-preview code br,.multimarkdown-preview tt br {
+    display: none
+}
+
+.multimarkdown-preview del code {
+    text-decoration: inherit
+}
+
+.multimarkdown-preview pre {
+    word-wrap: normal
+}
+
+.multimarkdown-preview pre>code {
+    font-family: consolas;
+    background: transparent;
+    border: 0;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    word-break: normal
+}
+
+.multimarkdown-preview .highlight {
+    margin-bottom: 16px
+}
+
+.multimarkdown-preview .highlight pre {
+    margin-bottom: 0;
+    word-break: normal
+}
+
+.multimarkdown-preview .highlight pre,.multimarkdown-preview pre {
+    background-color: #f6f8fa;
+    border-radius: 3px;
+    font-size: 85%;
+    line-height: 1.45;
+    overflow: auto;
+    padding: 16px
+}
+
+.multimarkdown-preview pre code,.multimarkdown-preview pre tt {
+    background-color: initial;
+    border: 0;
+    display: inline;
+    line-height: inherit;
+    margin: 0;
+    max-width: auto;
+    overflow: visible;
+    padding: 0;
+    word-wrap: normal
+}
+
+.multimarkdown-preview .csv-data td,.multimarkdown-preview .csv-data th {
+    font-size: 12px;
+    line-height: 1;
+    overflow: hidden;
+    padding: 5px;
+    text-align: left;
+    white-space: nowrap
+}
+
+.multimarkdown-preview .csv-data .blob-num {
+    background: #fff;
+    border: 0;
+    padding: 10px 8px 9px;
+    text-align: right
+}
+
+.multimarkdown-preview .csv-data tr {
+    border-top: 0
+}
+
+.multimarkdown-preview .csv-data th {
+    background: #f6f8fa;
+    border-top: 0;
+    font-weight: 600
+}
+</style>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.0/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+<script>
+$(document).ready(function(){
+	$('pre').has('code.mermaid').css('text-align', 'center');
+	$('pre').has('code.mermaid').css('background-color', '#ffffff');
+});
+</script></head>
+<body class="multimarkdown-preview">
+<h1 id="微众银行人脸检索-face-retrieve"><a href="#微众银行人脸检索-face-retrieve" name="微众银行人脸检索-face-retrieve"></a>微众银行人脸检索 FACE-RETRIEVE</h1>
+<p>version: v0.6.x (SDK版本号)</p>
+<h2 id="changelist"><a href="#changelist" name="changelist"></a>CHANGELIST</h2>
+<h3 id="v050"><a href="#v050" name="v050"></a>v0.5.0</h3>
+<ul>
+  <li>[更新接口] 库id由int改为std::string</li>
+</ul>
+<h3 id="v024"><a href="#v024" name="v024"></a>v0.2.4</h3>
+<ul>
+  <li>[更新错误码]</li>
+</ul>
+<h2 id="名词解释"><a href="#名词解释" name="名词解释"></a>名词解释</h2>
+<ul>
+  <li><code>feat</code> 特征 <code>feature</code> 的简写，特征为一维数组，每一维为一个浮点小数。比如：每张人脸的特征可以表示为特征长度为 512 个 float 组成的一个 float[] 向量，即特征向量。</li>
+  <li><code>featLength</code> 特征向量长度，不同的<strong>人脸特征SDK</strong>对应提取的特征长度可能不一致，目前最稳定的为 512 维，还可能为 1024/128/512 维</li>
+  <li><code>featId</code> 每一个特征向量对应唯一标识符</li>
+  <li><code>sim</code> 两个特征向量的欧式距离</li>
+  <li><code>score</code> 将 <code>sim</code> 转换成 [0, 100] 的分数</li>
+  <li><code>norm</code> 归一化，<strong>所有的特征在进行计算前，都必须要归一化</strong>，归一化能够极大的提高运算效率。特征归一化有多种方式，目前使用的的归一化方法为：<a href="https://en.wikipedia.org/wiki/Feature_scaling#Scaling_to_unit_length">缩放到单位长度 Scaling to unit length</a></li>
+</ul>
+<pre><code class="bash"># 对于特征向量 x
+x = (x1, x2, x3, ..., xn)
+# 求取其平方和，并开根号
+sum = sqrt(x1*x1 + x2*x2 + x3*x3 + ... + xn*xn)
+# 每一维除以 sum，即可得到归一化之后的特征向量
+x_norm = (x1/sum, x2/sum, x3/sum, ..., xn/sum)
+</code></pre>
+<h2 id="调用流程"><a href="#调用流程" name="调用流程"></a>调用流程</h2>
+<p>注意：特征向量一定要先归一化，然后按照对应 id 的顺序拼接而成</p>
+<p>以 c++ 为例：</p>
+<pre><code class="cpp">// 0. 确定 **人脸特征SDK** 的要素：特征长度 `featLength`。
+int featLength = 512;
+
+// 1. 使用 `featLength`，创建对应的 `FaceRetrieve` 的实例。
+// retriever 内所有的 lib 特征长度均为 `featLength`
+FaceRetrieve retriever = new FaceRetrieve(featLength);
+
+// 2. 自定义库的 id，并创建，创建时候可以包含特征
+std::string DO_SOMETHING_LIB_ID = &quot;1&quot;;
+auto result = retriever.CreateLib(nullptr, nullptr, 0, DO_SOMETHING_LIB_ID);
+// or
+// 特征向量一定要先归一化，然后按照对应 id 的顺序拼接而成
+// 对于移动端 FaceFeature 提取的特征已经完成了归一化
+// feats = getSomeFeats();
+// featIds = getSomeFeatIds();
+// featNum = getSomeFeatNum();
+// auto result = retriever.CreateLib(feats, featIds, featNum, DO_SOMETHING_LIB_ID);
+
+// 3. 检索，从对应 lib 中，对输入的单条特征进行检索，获得 topN 相似度的 lib 中的特征结果
+std::string[5] libs = {DO_SOMETHING_LIB_ID};
+int topN = 3;
+float threshold = 0.8;
+float[] toRetrieveFeat = getSomeRetrievedFeat();
+
+std::vector&lt;RetrievedFace&gt; retrieved_face;
+auto result = retriever.Retrieve(libs, 5, topN, toRetrieveFeat, threshold, retrieved_face);
+if (results != 0) {
+    std::cout &lt;&lt; &quot;no results&quot; &lt;&lt; std::endl;
+}
+
+// 4. CRUD，可以调用其他接口，对 lib 中的特征进行增删改查，具体请看接口文档
+</code></pre>
+<h2 id="数据结构"><a href="#数据结构" name="数据结构"></a>数据结构</h2>
+<p>注意：特征向量一定要先归一化，然后按照对应 id 的顺序拼接而成</p>
+<p>每一个 <strong>人脸特征SDK</strong> 对于人脸特征的提取，都有对应的特征向量长度，<code>feat_length</code>。以下以 <code>feat_length = 512</code> 举例。</p>
+<pre><code class="cpp">int feat_length = 512;
+
+// 单个特征向量
+feat: [float, float, float, ..., float]
+float[] feat = new float[feat_length];
+
+// n个特征向量对应关系
+feats  : [  512,     512,     512,   ...,   512 ]
+featIds: [FeatId1, FeatId2, FeatId3, ..., FeatIdN]
+
+float[] feats = new float[n * feat_length];
+</code></pre>
+<h2 id="接口---c"><a href="#接口---c" name="接口---c"></a>接口 - C++</h2>
+<h3 id="头文件"><a href="#头文件" name="头文件"></a>头文件</h3>
+<ul>
+  <li>webank/face_retrieve.h</li>
+</ul>
+<h3 id="参数结构体"><a href="#参数结构体" name="参数结构体"></a>参数结构体</h3>
+<ul>
+  <li>RetrievedFace
+    <ul>
+      <li>std::string feat_id: 检索得到的 feat id</li>
+      <li>std::string lib_id: 检索得到的 lib id</li>
+      <li>float score: 分数，取值范围 [0-1]</li>
+    </ul>
+  </li>
+</ul>
+<h3 id="通用接口"><a href="#通用接口" name="通用接口"></a>通用接口</h3>
+<ul>
+  <li class="p">
+    <p class="p">FaceRetrieve(const int feat_length)</p>
+    <ul>
+      <li>@brief 实例初始化</li>
+      <li>@param <code>feat_length</code> 特征的长度，取决于<strong>人脸特征SDK</strong>提取的特征维度</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">int feat_length()</p>
+    <ul>
+      <li>@brief 获取特征长度</li>
+      <li>@return 特征长度</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">static std::string version()</p>
+    <ul>
+      <li>@brief 获得 SDK 版本号，如 <code>v3.0.0</code>/<code>v3.0.0-beta.0</code>/<code>v3.1.1-rc.0</code></li>
+      <li>@return 版本号</li>
+    </ul>
+  </li>
+</ul>
+<h3 id="功能接口多线程不安全"><a href="#功能接口多线程不安全" name="功能接口多线程不安全"></a>功能接口（<strong>多线程不安全</strong>）</h3>
+<ul>
+  <li class="p">
+    <p class="p">float Compare(const float* feat0, const float* feat1, const bool is_centile)</p>
+    <ul>
+      <li>@brief 比对两个人脸特征</li>
+      <li>@param <code>feat0</code> 人脸特征；不能为空，数据长度=<code>feat_length</code></li>
+      <li>@param <code>feat1</code> 人脸特征；不能为空，数据长度=<code>feat_length</code></li>
+      <li>@param <code>is_centile</code> 是否返回百分制分数，true返回百分制分数，false返回[0, 1]分数</li>
+      <li>@return 分数</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">int Retrieve(const std::string* lib_ids, const size_t lib_num, const size_t top_n, const float* feat, const float threshold, std::vector<RetrievedFace>&amp; retrieved_face)</p>
+    <ul>
+      <li>@brief 在指定库中检索出最相似的 topN 个人，得到符合条件的检索结果</li>
+      <li>@param <code>lib_ids</code> 所有待检索的库 id；不能为空，数据长度=<code>lib_num</code></li>
+      <li>@param <code>lib_num</code> 所有待检索的库的个数</li>
+      <li>@param <code>top_n</code> 选取相似度最高的前 <code>top_n</code> 个人</li>
+      <li>@param <code>feat</code> 待检索的人的特征；不能为空，数据长度=<code>feat_length</code></li>
+      <li>@param <code>threshold</code> 阈值，[0, 1]</li>
+      <li>@param <code>retrieved_face</code> 检索结果</li>
+      <li>@return 是否检索成功，0表示成功，其他值含义参见错误码</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">int CreateLib(const float* feats, const std::string* feat_ids, const size_t feat_num, const std::string lib_id)</p>
+    <ul>
+      <li>@brief 创建一个人脸检索 1:N 的库，可以创建多个检索库，由 <code>lib_id</code> 区分</li>
+      <li>@brief 其中三个参数应该满足关系 <code>feats.length == featIds.length * feat_length</code></li>
+      <li>@brief 注意，为了性能考虑，不会对插入的 <code>feat_ids</code> 进行重复性校验，调用者应自行确保 <code>feat_ids</code> 是唯一的</li>
+      <li>@brief 如果创建空数据库，设置<code>feats = nullptr</code>，<code>feat_ids = nullptr</code>和<code>feat_num = 0</code></li>
+      <li>@param <code>feats</code> 根据 <code>feat_ids</code> 的顺序，将所有特征值拼接而成的 float 数组，应该满足关系 <code>feats长度 == feat_num * feat_length</code>，<strong>特征必须归一化</strong></li>
+      <li>@param <code>feat_ids</code> 每个特征对应的特征 id，应该满足关系 <code>feat_ids长度 == feat_num</code></li>
+      <li>@param <code>feat_num</code> 输入的特征个数</li>
+      <li>@param <code>lib_id</code> 检索库 id，调用方自行决定，检索库的唯一标识符</li>
+      <li>@return 是否创建成功，比如：若 <code>lib_id</code> 重复，则会创建失败；0表示成功，其他值含义参见错误码</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">int InsertFeatures(const float* feats, const std::string* feat_ids, const size_t feat_num, const std::string lib_id)</p>
+    <ul>
+      <li>@brief 批量往检索库 <code>lib_id</code> 中插入指定的特征和其对应关系的特征 id</li>
+      <li>@brief 注意，为了性能考虑，不会对插入的 <code>feat_ids</code> 进行重复性校验，调用者应自行确保 <code>feat_ids</code> 是唯一的</li>
+      <li>@param <code>feats</code> 根据 <code>feat_ids</code> 的顺序，将所有特征值拼接而成的 float 数组，应该满足关系 <code>feats长度 == feat_num * feat_length</code>，<strong>特征必须归一化</strong></li>
+      <li>@param <code>feat_ids</code> 每个特征对应的特征 id，应该满足关系 <code>feat_ids长度 == feat_num</code></li>
+      <li>@param <code>feat_num</code> 插入的特征个数</li>
+      <li>@param <code>libId</code> 检索库 id，检索库的唯一标识符</li>
+      <li>@return 是否插入成功，0表示成功，其他值含义参见错误码</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">int ClearLib(const std::string lib_id)</p>
+    <ul>
+      <li>@brief 删除指定 <code>lib_id</code> 的检索库</li>
+      <li>@param <code>lib_id</code> 检索库 id</li>
+      <li>@return 是否删除成功，0表示成功，其他值含义参见错误码</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">int ClearAllLibs()</p>
+    <ul>
+      <li>@brief 删除本实例内所有的检索库</li>
+      <li>@return 是否删除成功，0表示成功，其他值含义参见错误码</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">size_t GetLibCount()</p>
+    <ul>
+      <li>@brief 得到检索库个数</li>
+      <li>@return 检索库个数</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">int DeleteFeatures(const std::string* feat_ids, const size_t feat_num, const std::string lib_id)</p>
+    <ul>
+      <li>@brief 删除指定 <code>lib_id</code> 中对应 <code>feat_ids</code> 的特征向量</li>
+      <li>@param <code>feat_ids</code> 待删除的id集合；不能为空，数据长度=<code>feat_num</code></li>
+      <li>@param <code>feat_num</code> 删除的特征个数</li>
+      <li>@param <code>lib_id</code> 待删除库 id</li>
+      <li>@return 是否删除成功，0表示成功，其他值含义参见错误码</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">int UpdateFeature(const float* feat, const std::string feat_id, std::string lib_id)</p>
+    <ul>
+      <li>@brief 更新指定 <code>lib_id</code> 中 <code>feat_id</code> 对应的特征向量</li>
+      <li>@param <code>feat</code> 输入的新的特征向量；不能为空，数据长度=<code>feat_length</code></li>
+      <li>@param <code>feat_id</code> 特征 id</li>
+      <li>@param <code>lib_id</code> 检索库 id</li>
+      <li>@return 是否更新成功，0表示成功，其他值含义参见错误码</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">int GetFeatureCount(const std::string lib_id)</p>
+    <ul>
+      <li>@brief 查询指定 <code>lib_id</code> 检索库中的特征数量</li>
+      <li>@param <code>lib_id</code> 检索库 id</li>
+      <li>@return 检索库中的特征数量</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">int QueryFeature(const std::string feat_id, const std::string lib_id, float* feat)</p>
+    <ul>
+      <li>@brief 查询指定 <code>lib_id</code> 检索库中指定 <code>feat_id</code> 的特征值</li>
+      <li>@param <code>feat_id</code> 特征 id</li>
+      <li>@param <code>lib_id</code> 检索库 id</li>
+      <li>@param <code>feat</code> 查询得到的特征值；不能为空，需<strong>调用方分配内存</strong></li>
+      <li>@return 是否查询成功，0表示成功，其他值含义参见错误码</li>
+    </ul>
+  </li>
+</ul>
+<h3 id="常见错误码"><a href="#常见错误码" name="常见错误码"></a>常见错误码</h3>
+<pre><code class="bash">ERROR_RETRIEVE_LIB_ID_EXIST -100
+ERROR_RETRIEVE_LIB_ID_NOT_EXIST -101
+ERROR_RETRIEVE_FEAT_ID_NOT_EXIST -102
+ERROR_RETRIEVE_FEATURES_AND_IDS_UNMATCHED -103
+ERROR_RETRIEVE_FEATURES_SIZE_OVERFLOW -104
+ERROR_RETRIEVE_EMPTY_LIB_IDS -105
+ERROR_RETRIEVE_FEAT_ID_EXIST -106
+ERROR_RETRIEVE_INPUT_ARGUMENTS_WRONG -107
+</code></pre>
+</body>
+</html>

@@ -1,0 +1,537 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<style>.hljs{display:block;overflow-x:auto;padding:0.5em;background:#F0F0F0}.hljs,.hljs-subst{color:#444}.hljs-comment{color:#888888}.hljs-keyword,.hljs-attribute,.hljs-selector-tag,.hljs-meta-keyword,.hljs-doctag,.hljs-name{font-weight:bold}.hljs-type,.hljs-string,.hljs-number,.hljs-selector-id,.hljs-selector-class,.hljs-quote,.hljs-template-tag,.hljs-versiondeletion{color:#880000}.hljs-title,.hljs-section{color:#880000;font-weight:bold}.hljs-regexp,.hljs-symbol,.hljs-variable,.hljs-template-variable,.hljs-link,.hljs-selector-attr,.hljs-selector-pseudo{color:#BC6060}.hljs-literal{color:#78A960}.hljs-built_in,.hljs-bullet,.hljs-code,.hljs-addition{color:#397300}.hljs-meta{color:#1f7199}.hljs-meta-string{color:#4d99bf}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}</style><style>
+.hljs{display:block;overflow-x:auto;padding:0.5em;background:#F0F0F0}.hljs,.hljs-subst{color:#444}.hljs-comment{color:#888888}.hljs-keyword,.hljs-attribute,.hljs-selector-tag,.hljs-meta-keyword,.hljs-doctag,.hljs-name{font-weight:bold}.hljs-type,.hljs-string,.hljs-number,.hljs-selector-id,.hljs-selector-class,.hljs-quote,.hljs-template-tag,.hljs-versiondeletion{color:#880000}.hljs-title,.hljs-section{color:#880000;font-weight:bold}.hljs-regexp,.hljs-symbol,.hljs-variable,.hljs-template-variable,.hljs-link,.hljs-selector-attr,.hljs-selector-pseudo{color:#BC6060}.hljs-literal{color:#78A960}.hljs-built_in,.hljs-bullet,.hljs-code,.hljs-addition{color:#397300}.hljs-meta{color:#1f7199}.hljs-meta-string{color:#4d99bf}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}
+ /*!
+ * Primer-product
+ * http://primer.github.io
+ *
+ * Released under MIT license. Copyright (c) 2018 GitHub Inc.
+ */
+ a{text-decoration: none;} 
+.multimarkdown-preview {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol !important;
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    width: 1000px;
+    margin: auto;
+}
+
+.multimarkdown-preview:after,.multimarkdown-preview:before {
+    content: "";
+    display: table
+}
+
+.multimarkdown-preview:after {
+    clear: both
+}
+
+.multimarkdown-preview>:first-child {
+    margin-top: 0!important
+}
+
+.multimarkdown-preview>:last-child {
+    margin-bottom: 0!important
+}
+
+.multimarkdown-preview a:not([href]) {
+    color: inherit;
+    text-decoration: none
+}
+
+.multimarkdown-preview .absent {
+    color: #cb2431
+}
+
+.multimarkdown-preview .anchor {
+    float: left;
+    line-height: 1;
+    margin-left: -20px;
+    padding-right: 4px
+}
+
+.multimarkdown-preview .anchor:focus {
+    outline: none
+}
+
+.multimarkdown-preview blockquote,.multimarkdown-preview dl,.multimarkdown-preview ol,.multimarkdown-preview p,.multimarkdown-preview pre,.multimarkdown-preview table,.multimarkdown-preview ul {
+    margin-bottom: 16px;
+    margin-top: 0
+}
+
+.multimarkdown-preview hr {
+    background-color: #e1e4e8;
+    border: 0;
+    height: .25em;
+    margin: 24px 0;
+    padding: 0
+}
+
+.multimarkdown-preview blockquote {
+    border-left: .25em solid #dfe2e5;
+    color: #6a737d;
+    padding: 0 1em
+}
+
+.multimarkdown-preview blockquote>:first-child {
+    margin-top: 0
+}
+
+.multimarkdown-preview blockquote>:last-child {
+    margin-bottom: 0
+}
+
+.multimarkdown-preview kbd {
+    background-color: #fafbfc;
+    border: 1px solid #c6cbd1;
+    border-bottom-color: #959da5;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #959da5;
+    color: #444d56;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 10px;
+    padding: 3px 5px;
+    vertical-align: middle
+}
+
+.multimarkdown-preview h1,.multimarkdown-preview h2,.multimarkdown-preview h3,.multimarkdown-preview h4,.multimarkdown-preview h5,.multimarkdown-preview h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    margin-top: 24px
+}
+
+.multimarkdown-preview h1 .octicon-link,.multimarkdown-preview h2 .octicon-link,.multimarkdown-preview h3 .octicon-link,.multimarkdown-preview h4 .octicon-link,.multimarkdown-preview h5 .octicon-link,.multimarkdown-preview h6 .octicon-link {
+    color: #1b1f23;
+    vertical-align: middle;
+    visibility: hidden
+}
+
+.multimarkdown-preview h1:hover .anchor,.multimarkdown-preview h2:hover .anchor,.multimarkdown-preview h3:hover .anchor,.multimarkdown-preview h4:hover .anchor,.multimarkdown-preview h5:hover .anchor,.multimarkdown-preview h6:hover .anchor {
+    text-decoration: none
+}
+
+.multimarkdown-preview h1:hover .anchor .octicon-link,.multimarkdown-preview h2:hover .anchor .octicon-link,.multimarkdown-preview h3:hover .anchor .octicon-link,.multimarkdown-preview h4:hover .anchor .octicon-link,.multimarkdown-preview h5:hover .anchor .octicon-link,.multimarkdown-preview h6:hover .anchor .octicon-link {
+    visibility: visible
+}
+
+.multimarkdown-preview h1 code,.multimarkdown-preview h1 tt,.multimarkdown-preview h2 code,.multimarkdown-preview h2 tt,.multimarkdown-preview h3 code,.multimarkdown-preview h3 tt,.multimarkdown-preview h4 code,.multimarkdown-preview h4 tt,.multimarkdown-preview h5 code,.multimarkdown-preview h5 tt,.multimarkdown-preview h6 code,.multimarkdown-preview h6 tt {
+    font-size: inherit
+}
+
+.multimarkdown-preview h1 {
+    font-size: 2em
+}
+
+.multimarkdown-preview h1,.multimarkdown-preview h2 {
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: .3em
+}
+
+.multimarkdown-preview h2 {
+    font-size: 1.5em
+}
+
+.multimarkdown-preview h3 {
+    font-size: 1.25em
+}
+
+.multimarkdown-preview h4 {
+    font-size: 1em
+}
+
+.multimarkdown-preview h5 {
+    font-size: .875em
+}
+
+.multimarkdown-preview h6 {
+    color: #6a737d;
+    font-size: .85em
+}
+
+.multimarkdown-preview ol,.multimarkdown-preview ul {
+    padding-left: 2em
+}
+
+.multimarkdown-preview ol.no-list,.multimarkdown-preview ul.no-list {
+    list-style-type: none;
+    padding: 0
+}
+
+.multimarkdown-preview ol ol,.multimarkdown-preview ol ul,.multimarkdown-preview ul ol,.multimarkdown-preview ul ul {
+    margin-bottom: 0;
+    margin-top: 0
+}
+
+.multimarkdown-preview li {
+    word-wrap: break-all
+}
+
+.multimarkdown-preview li>p {
+    margin-top: 16px
+}
+
+.multimarkdown-preview li+li {
+    margin-top: .25em
+}
+
+.multimarkdown-preview dl {
+    padding: 0
+}
+
+.multimarkdown-preview dl dt {
+    font-size: 1em;
+    font-style: italic;
+    font-weight: 600;
+    margin-top: 16px;
+    padding: 0
+}
+
+.multimarkdown-preview dl dd {
+    margin-bottom: 16px;
+    padding: 0 16px
+}
+
+.multimarkdown-preview table {
+    display: block;
+    overflow: auto;
+    width: 100%
+}
+
+.multimarkdown-preview table th {
+    font-weight: 600
+}
+
+.multimarkdown-preview table td,.multimarkdown-preview table th {
+    border: 1px solid #dfe2e5;
+    padding: 6px 13px
+}
+
+.multimarkdown-preview table tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1
+}
+
+.multimarkdown-preview table tr:nth-child(2n) {
+    background-color: #f6f8fa
+}
+
+.multimarkdown-preview table img {
+    background-color: initial
+}
+
+.multimarkdown-preview img {
+    background-color: #fff;
+    box-sizing: initial;
+    max-width: 100%
+}
+
+.multimarkdown-preview img[align=right] {
+    padding-left: 20px
+}
+
+.multimarkdown-preview img[align=left] {
+    padding-right: 20px
+}
+
+.multimarkdown-preview .emoji {
+    background-color: initial;
+    max-width: none;
+    vertical-align: text-top
+}
+
+.multimarkdown-preview span.frame {
+    display: block;
+    overflow: hidden
+}
+
+.multimarkdown-preview span.frame>span {
+    border: 1px solid #dfe2e5;
+    display: block;
+    float: left;
+    margin: 13px 0 0;
+    overflow: hidden;
+    padding: 7px;
+    width: auto
+}
+
+.multimarkdown-preview span.frame span img {
+    display: block;
+    float: left
+}
+
+.multimarkdown-preview span.frame span span {
+    clear: both;
+    color: #24292e;
+    display: block;
+    padding: 5px 0 0
+}
+
+.multimarkdown-preview span.align-center {
+    clear: both;
+    display: block;
+    overflow: hidden
+}
+
+.multimarkdown-preview span.align-center>span {
+    display: block;
+    margin: 13px auto 0;
+    overflow: hidden;
+    text-align: center
+}
+
+.multimarkdown-preview span.align-center span img {
+    margin: 0 auto;
+    text-align: center
+}
+
+.multimarkdown-preview span.align-right {
+    clear: both;
+    display: block;
+    overflow: hidden
+}
+
+.multimarkdown-preview span.align-right>span {
+    display: block;
+    margin: 13px 0 0;
+    overflow: hidden;
+    text-align: right
+}
+
+.multimarkdown-preview span.align-right span img {
+    margin: 0;
+    text-align: right
+}
+
+.multimarkdown-preview span.float-left {
+    display: block;
+    float: left;
+    margin-right: 13px;
+    overflow: hidden
+}
+
+.multimarkdown-preview span.float-left span {
+    margin: 13px 0 0
+}
+
+.multimarkdown-preview span.float-right {
+    display: block;
+    float: right;
+    margin-left: 13px;
+    overflow: hidden
+}
+
+.multimarkdown-preview span.float-right>span {
+    display: block;
+    margin: 13px auto 0;
+    overflow: hidden;
+    text-align: right
+}
+
+.multimarkdown-preview code,.multimarkdown-preview tt {
+    font-family: consolas;
+    background-color: rgba(27,31,35,.05);
+    border-radius: 3px;
+    font-size: 85%;
+    margin: 0;
+    padding: .2em .4em
+}
+
+.multimarkdown-preview code br,.multimarkdown-preview tt br {
+    display: none
+}
+
+.multimarkdown-preview del code {
+    text-decoration: inherit
+}
+
+.multimarkdown-preview pre {
+    word-wrap: normal
+}
+
+.multimarkdown-preview pre>code {
+    font-family: consolas;
+    background: transparent;
+    border: 0;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    word-break: normal
+}
+
+.multimarkdown-preview .highlight {
+    margin-bottom: 16px
+}
+
+.multimarkdown-preview .highlight pre {
+    margin-bottom: 0;
+    word-break: normal
+}
+
+.multimarkdown-preview .highlight pre,.multimarkdown-preview pre {
+    background-color: #f6f8fa;
+    border-radius: 3px;
+    font-size: 85%;
+    line-height: 1.45;
+    overflow: auto;
+    padding: 16px
+}
+
+.multimarkdown-preview pre code,.multimarkdown-preview pre tt {
+    background-color: initial;
+    border: 0;
+    display: inline;
+    line-height: inherit;
+    margin: 0;
+    max-width: auto;
+    overflow: visible;
+    padding: 0;
+    word-wrap: normal
+}
+
+.multimarkdown-preview .csv-data td,.multimarkdown-preview .csv-data th {
+    font-size: 12px;
+    line-height: 1;
+    overflow: hidden;
+    padding: 5px;
+    text-align: left;
+    white-space: nowrap
+}
+
+.multimarkdown-preview .csv-data .blob-num {
+    background: #fff;
+    border: 0;
+    padding: 10px 8px 9px;
+    text-align: right
+}
+
+.multimarkdown-preview .csv-data tr {
+    border-top: 0
+}
+
+.multimarkdown-preview .csv-data th {
+    background: #f6f8fa;
+    border-top: 0;
+    font-weight: 600
+}
+</style>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.0/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+<script>
+$(document).ready(function(){
+	$('pre').has('code.mermaid').css('text-align', 'center');
+	$('pre').has('code.mermaid').css('background-color', '#ffffff');
+});
+</script></head>
+<body class="multimarkdown-preview">
+<h1 id="微众银行人脸特征文档-face-feature"><a href="#微众银行人脸特征文档-face-feature" name="微众银行人脸特征文档-face-feature"></a>微众银行人脸特征文档 FACE-FEATURE</h1>
+<blockquote>
+  <p>对输入的人脸图片进行特征提取</p>
+</blockquote>
+<p>version: v0.6.x-v0.3.1 (SDK版本号-模型版本号)</p>
+<h2 id="调用流程"><a href="#调用流程" name="调用流程"></a>调用流程</h2>
+<pre><code class="mermaid">graph TD
+start((开始)) --&gt; auth(授权CommonInterface.initAuth)
+auth --&gt; init(全局初始化FaceFeature.globalInit) 
+init --&gt; construct(实例初始化FaceFeature.FaceFeature)
+construct --&gt; detect(开始检测FaceFeature.extractRGB)
+detect --&gt; destroy(释放实例FaceFeature.destroy)
+destroy --&gt; release(释放模型FaceFeature.GlobalRelease)
+release --&gt; finish((结束))
+</code></pre>
+<h2 id="接口---java"><a href="#接口---java" name="接口---java"></a>接口 - Java</h2>
+<p>package: webank.com.facefeature.FaceFeature</p>
+<h3 id="常量"><a href="#常量" name="常量"></a>常量</h3>
+<ul>
+  <li>static final int FEATURE_LENGTH: 当前人脸特征版本提取的人脸特征长度</li>
+</ul>
+<h3 id="通用接口"><a href="#通用接口" name="通用接口"></a>通用接口</h3>
+<ul>
+  <li class="p">
+    <p class="p">static int globalInit(String dirPath, String configFilename);</p>
+    <ul>
+      <li>@brief 全局初始化函数，初始化模型，进程初始化一次即可，多线程不安全</li>
+      <li>@param <code>dirPath</code> 模型所在外部存储空间的绝对路径</li>
+      <li>@param <code>configFilename</code> 路径<code>dirPath</code>下 config 文件名，如 <code>config.ini</code>，确保<code>dirPath + / + configFilename</code>文件存在</li>
+      <li>@return <code>&lt; 0</code> 失败</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">static int globalInit(AssetManager assetManager, String dirPath, String configFilename);</p>
+    <ul>
+      <li>@brief (<strong>只有android系统有效</strong>)全局初始化函数，初始化模型，进程初始化一次即可，多线程不安全</li>
+      <li>@param <code>assetManager</code> Android 管理 <code>Assets</code> 类，可通过 <code>this.getAssets()</code> 获得</li>
+      <li>@param <code>dirPath</code> 模型所在 <code>Assets</code> 存储下的相对路径</li>
+      <li>@param <code>configFilename</code> 模型所在 <code>Assets</code> 存储下的相对路径下 config 的文件名，如 <code>config.ini</code></li>
+      <li>@return <code>&lt; 0</code> 失败</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">static void globalRelease();</p>
+    <ul>
+      <li>@brief 全局析构函数，进程结束析构一次即可，多线程不安全</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">FaceFeature();</p>
+    <ul>
+      <li>@brief 实例初始化 (<strong>实例初始化前必须先全局初始化</strong>)</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">void destroy();</p>
+    <ul>
+      <li>@brief 每一个 new 出的实例，都需要明确的 destroy()。防止内存泄漏。</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">static String getVersion();</p>
+    <ul>
+      <li>@brief 获得 SDK + MODEL 的版本号，如<code>v3.0.0-v7114</code>
+        <ul>
+          <li>MODEL 的版本号由 <code>config.ini</code> 中读取获得</li>
+          <li>SDK 的版本号一般为 <code>v3.0.0</code>/<code>v3.0.0-beta.0</code>/<code>v3.1.1-rc.0</code></li>
+        </ul>
+      </li>
+      <li>@return 版本号</li>
+    </ul>
+  </li>
+</ul>
+<h3 id="功能接口多线程安全"><a href="#功能接口多线程安全" name="功能接口多线程安全"></a>功能接口（<strong>多线程安全</strong>）</h3>
+<ul>
+  <li class="p">
+    <p class="p">int extractRGB(float[] xy5Points, byte[] rgbData, int width, int height, int flag, float[] feature);</p>
+    <ul>
+      <li>@brief 根据输入的人脸关键五点和图片数据，提取人脸特征</li>
+      <li>@param <code>xy5Points</code> 人脸关键五点横纵坐标，(左眼，右眼，鼻尖，左嘴角，右嘴角)；不能为空，数组长度=<code>10</code></li>
+      <li>@param <code>rgbData</code> 输入 RGB 图像数据；不能为空，数组长度=<code>width*height*3</code></li>
+      <li>@param <code>width</code> 输入 RGB 图像 宽</li>
+      <li>@param <code>height</code> 输入 RGB 图像 高</li>
+      <li>@param <code>flag</code> 输入图像旋转系数，只能取1,2,3,4,5,6,7,8八个值，1为不旋转</li>
+      <li>@param <code>feature</code> 输出特征值序列结果，此特征值已经完成<strong>归一化</strong>；不能为空，需<strong>调用方分配内存</strong>，数组长度<code>=FEATURE_LENGTH</code></li>
+      <li>@return <code>== 0</code> =&gt; 成功，<code>!= 0</code> =&gt; 失败</li>
+    </ul>
+  </li>
+  <li class="p">
+    <p class="p">int extractYUV(float[] xy5Points, byte[] yuvData, int width, int height, int flag, float[] feature);</p>
+    <ul>
+      <li>@brief 根据输入的人脸关键五点和图片数据，提取人脸特征</li>
+      <li>@param <code>xy5Points</code> 人脸关键五点横纵坐标，(左眼，右眼，鼻尖，左嘴角，右嘴角)；不能为空，数组长度=<code>10</code></li>
+      <li>@param <code>yuvData</code> 输入 YUV 图像数据；不能为空，数组长度=<code>width*height*1.5</code></li>
+      <li>@param <code>width</code> 输入 YUV 图像 宽</li>
+      <li>@param <code>height</code> 输入 YUV 图像 高</li>
+      <li>@param <code>flag</code> 输入图像旋转系数，只能取1,2,3,4,5,6,7,8八个值，1为不旋转</li>
+      <li>@param <code>feature</code> 输出特征值序列结果，此特征值已经完成<strong>归一化</strong>；不能为空，需<strong>调用方分配内存</strong>，数组长度<code>=FEATURE_LENGTH</code></li>
+      <li>@return <code>== 0</code> =&gt; 成功，<code>!= 0</code> =&gt; 失败</li>
+    </ul>
+  </li>
+</ul>
+</body>
+</html>
