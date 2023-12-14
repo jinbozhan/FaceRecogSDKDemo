@@ -30,10 +30,10 @@ public class WbFaceSdkManager {
     static {
 //        System.loadLibrary("omp");
 //        System.loadLibrary("opencv_java3");
-//        System.loadLibrary("WeBankCommon");
-        System.loadLibrary("WeBankFaceLiveAction");
-        System.loadLibrary("WeBankFaceTracker");
-        System.loadLibrary("WeBankFaceQuality");
+//        System.loadLibrary("WeBankCommonJni");
+        System.loadLibrary("WeBankFaceLiveActionJni");
+        System.loadLibrary("WeBankFaceTrackerJni");
+        System.loadLibrary("WeBankFaceQualityJni");
 
         AssetManager manager = WeBankApp.getInstance().getApplicationContext().getAssets();
         int result = FaceTracker.globalInit(manager, "models/face-tracker", "config.ini");

@@ -113,7 +113,7 @@ public class WeBankSDKManager {
     }
 
     public static void loadLibs() {
-        System.loadLibrary("opencv_java3");
+//        System.loadLibrary("opencv_java3");
         System.loadLibrary("WeBankCommon");
         System.loadLibrary("WeBankFaceFeature");
         System.loadLibrary("WeBankFaceAttribute");
